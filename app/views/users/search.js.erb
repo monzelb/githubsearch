@@ -1,1 +1,3 @@
-            <h2> <%= @query %> </h2>
+$('.result').remove()
+$('body').append('<li class="result media"><%= j @followers.first.login %></li><img src= "<%= j @followers.first.avatar_url %>" class="result img">');
+
