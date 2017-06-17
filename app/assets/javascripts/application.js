@@ -17,12 +17,7 @@
 
 
 $( document ).ready(function() {
-  $(".search-form").submit(function(event){
-    event.preventDefault()
-    $(".input-field").val().change(function(){
-      
-    })
-  })
+  
   
 });
 

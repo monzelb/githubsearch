@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
   <head>
     <title>GithubUsersSearch</title>
+  <%= Gon::Base.render_data %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -13,7 +14,7 @@
 
   <body>
     <nav>
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar navbar navbar-fixed-top">
           <div class="row">
             <div class="col-sm-6 col-sm-offset-3 logo-div hidden-sm hidden-xs">
