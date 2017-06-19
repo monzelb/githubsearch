@@ -16,7 +16,7 @@
       <div class="container">
         <div class="navbar navbar navbar-fixed-top">
           <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 logo-div hidden-sm hidden-xs">
+            <div class="col-sm-8 col-sm-offset-3 logo-div hidden-sm hidden-xs">
               <%= image_tag "https://i.imgur.com/wOtQ7Wy.png", :width=> "70px", :height=> "70px", :class=> "logo navbar-left" %>
               <%= image_tag "https://i.imgur.com/Bse9dO5.jpg", :width=> "70px", :height=> "70px", :class=> "logo navbar-left" %>
               <%= image_tag "https://i.imgur.com/kfsClYP.jpg", :width=> "70px", :height=> "70px", :class=> "logo navbar-left" %>
@@ -31,21 +31,26 @@
     </nav>
     <div class="container search">
       <div class="row">
-        <div class="col-md-4 col-md-offset-4 search-bar">
+        <div class="col-md-5 col-md-offset-6 search-bar">
           <div class="input-group">
             <%= form_tag("/search", method: "get", remote: true) do %>
-              <%= text_field_tag(:query) %>
-              <%= submit_tag("Search") %>
+              <%= text_field_tag(:query, nil, class: "form-control", placeholder: "search for a user") %>
             <% end %>
           </div>
         </div>
+        <div class="col-md-4">
+          <p class="totop"> 
+              <a href="#top">Back to top</a> 
+          </p>
+        </div>
+        <div class="col-md-5 col-md-offset-5 content-container">
+          <div class="content"></div>
+          <a href="#" id="loadMore">Load More</a>
+        </div>
       </div>
     </div>
-    <div class="content"></div>
-    <a href="#" id="loadMore">Load More</a>
+    
 
-    <p class="totop"> 
-        <a href="#top">Back to top</a> 
     </p>
   </body>
 </html>
