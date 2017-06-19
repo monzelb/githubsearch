@@ -66,6 +66,17 @@ body {
     margin-bottom: 5px;
     background-color: #f1f1f1;
 }
+
+.user{
+    padding: 10px;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #fff;
+    box-shadow: 0 1px 1px #ccc;
+    margin-bottom: 5px;
+    background-color: #2D9EE0;
+}
+
 .totop {
     position: fixed;
     bottom: 10px;

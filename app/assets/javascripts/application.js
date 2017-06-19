@@ -40,6 +40,7 @@ $( document ).ready(function() {
 $(function () {
 
     $(".result").slice(0, 4).show();
+    $(".user").show()
     $("#loadMore").on('click', function (e) {
         e.preventDefault();
         $("div:hidden").slice(0, 4).slideDown();
