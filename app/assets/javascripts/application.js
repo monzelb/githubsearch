@@ -14,14 +14,31 @@
 //= require jquery_ujs
 //= require_tree .
 
-
 $( document ).ready(function() {
-  
-  
+    console.log( "ready!" );
+    $("#loadMore").hide()
+    function delay(){
+      setTimeout(function(){
+        console.log($("div:hidden").length)
+          if ($("div:hidden").length > 0){
+            $("#loadMore").show()
+          }
+          else {
+            $("#loadMore").hide()
+          }
+        }
+        , 1300);
+    }
+
+    $("form").submit(function(){
+      delay();
+    })
+
 });
 
 
 $(function () {
+
     $(".result").slice(0, 4).show();
     $("#loadMore").on('click', function (e) {
         e.preventDefault();
@@ -36,12 +53,16 @@ $(function () {
           $('.totop a').fadeIn();
         }
     });
+
 });
 
-$("a[href='#top']").click(function () {
-    $('body,html').animate({
-        scrollTop: 0
-    }, 600);
+
+
+
+$("a[href='#top']").click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
     return false;
 });
 
