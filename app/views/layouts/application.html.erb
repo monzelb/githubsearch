@@ -30,7 +30,7 @@
     </nav>
     <div class="container search">
       <div class="row">
-        <div class="col-md-5 col-md-offset-5 search-bar">
+        <div class="col-md-5 col-md-offset-4 search-bar">
           <div class="input-group">
             <%= form_tag("/search", method: "get", remote: true) do %>
               <%= text_field_tag(:query, nil, class: "form-control", placeholder: "search for a user") %>
