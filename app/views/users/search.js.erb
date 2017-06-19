@@ -2,10 +2,9 @@ console.log("<%= @user.login %>")
 $('.result, .user').remove()
 
 
-$('.user-content').append('<div class="user"><img src= "<%= j @user.avatar_url %>" class="img"><span class="ghname"> <%= @user.login %> </span></div>');
-$('body').append('<p><%= @user.login %></p>')
+$('.user-content').append('<div class="user profile"><img src= "<%= j @user.avatar_url %>" class="img"><span class="ghname"> <%= @user.login %> </span></div>');
 
-$('.follower-count').append('<div class="count"><p><%=  @followers.length %> followers:</p>')
+$('.follower-count').append('<div class="user"><p><%=  @followers.length %> followers:</p></div>')
 
 <% @followers.each do |follower| %>
 $('.follower-content').append('<div class="result"><img src= "<%= j follower.avatar_url %>" class="img"><span class="ghname"> <%= j follower.login %> </span></div>');
