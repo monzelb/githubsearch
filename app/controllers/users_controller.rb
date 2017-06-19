@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def search
-    github = Octokit::Client.new(:login => 'monzelb', :password => "#{Rails.application.secrets.github_key}")
+    github = Octokit::Client.new(:login => 'monzelb', :password => ENV['github_key'])
     @query = params[:query]
     gon.query = @query
     @followers = github.followers("#{@query}")
