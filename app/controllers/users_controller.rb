@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
   def search
-    # github = Github.new basic_auth: "monzelb:#{Rails.application.secrets.github_key}"
     github = Octokit::Client.new(:login => 'monzelb', :password => "#{Rails.application.secrets.github_key}")
     @query = params[:query]
+    gon.query = @query
     @followers = github.followers("#{@query}")
+    gon.watch.followers = @followers
     @blah = "blah"
     gon.blah = @blah
-    # @followers = client.users.followers.list "#{@query}"
     if @query
       respond_to do |format|
-        format.js {}
-        format.html {redirect_to search_url}
+        format.js { render "search", :locals => {:query => @query} }
+        format.html 
       end
     end
   end
