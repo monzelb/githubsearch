@@ -1,4 +1,10 @@
 $('.result').remove()
-console.log(gon.blah)
 
-$('body').append('<li class="result media"><%= j @followers.first.login %></li><img src= "<%= j @followers.first.avatar_url %>" class="result img">');
+
+<% @followers.each do |follower| %>
+$('.content').append('<div class="result"><img src= "<%= j follower.avatar_url %>" class="img"><span class="ghname"> <%= j follower.login %> </span></div>');
+<% end %>
+
+
+$('.result').hide()
+$('.result:lt(10)').show()

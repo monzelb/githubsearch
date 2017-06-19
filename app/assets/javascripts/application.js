@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 
@@ -21,4 +20,28 @@ $( document ).ready(function() {
   
 });
 
+
+$(function () {
+    $(".result").slice(0, 4).show();
+    $("#loadMore").on('click', function (e) {
+        e.preventDefault();
+        $("div:hidden").slice(0, 4).slideDown();
+        if ($("div:hidden").length == 0) {
+            $("#load").fadeOut('slow');
+        }
+        $('html,body').animate({
+            scrollTop: $(this).offset().top
+        }, 1500);
+        if ($(".result:visible").length > 10){
+          $('.totop a').fadeIn();
+        }
+    });
+});
+
+$("a[href='#top']").click(function () {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 600);
+    return false;
+});
 
