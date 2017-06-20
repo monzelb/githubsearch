@@ -14,12 +14,13 @@
 //= require jquery_ujs
 //= require_tree .
 
+
 $( document ).ready(function() {
-    console.log( "ready!" );
+  // Hide load more button
     $("#loadMore").hide()
-    function delay(){
+    // If there are still results that havent been loaded, show load more button.
+    function load(){
       setTimeout(function(){
-        console.log($("div:hidden").length)
           if ($("div:hidden").length > 0){
             $("#loadMore").show()
           }
@@ -27,18 +28,17 @@ $( document ).ready(function() {
             $("#loadMore").hide()
           }
         }
-        , 1300);
+        , 2000);
     }
-
     $("form").submit(function(){
-      delay();
+      load();
     })
 
 });
 
 
 $(function () {
-
+    // Display results and slide down more when load more bottun is clicked
     $(".result").slice(0, 4).show();
     $(".user").show()
     $("#loadMore").on('click', function (e) {
@@ -57,9 +57,7 @@ $(function () {
 
 });
 
-
-
-
+// Back to top button
 $("a[href='#top']").click(function(){
     $('html, body').animate({
         scrollTop: $( $(this).attr('href') ).offset().top
